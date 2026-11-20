@@ -1,3 +1,19 @@
+# Life Hearts — аддон до Limited Lives (Forge 1.20.1, GeckoLib 4)
+
+У світі зрідка з'являються живі серця (на поверхні й у печерах, біля гравців). Кілька ударів — серце розлітається на
+шматки, а той, хто його розбив, отримує ще одне життя: урочистий звук, золото-червоне сяйво й «+1 ЖИТТЯ» на екрані.
+ПКМ по серцю — поглинути його (теж +1 життя). Якщо життя вже повні — серце лікує.
+
+- Залежності: GeckoLib 4 (обов'язково), Limited Lives (необов'язково; без нього серце дає поглинання).
+- Конфіг `config/lifehearts-common.toml`: частота й шанс появи, відстань, ліміт поруч, час життя серця, кількість ударів,
+  дозволені життя понад максимум.
+- Дебаг: «Виклик серця» у творчій вкладці «Інструменти».
+- Збірка: GitHub Actions (`.github/workflows/build.yml`), jar в артефактах.
+
+Моделі й анімації: `tools/gen_heart.py` → `output/` (копія в `src/main/resources/assets/lifehearts/`).
+
+---
+
 # Hearts Addon — consumable heart GeckoLib model (Forge 1.20.1, GeckoLib 4)
 
 Context repo for AI assistants: a procedural generator plus its generated assets and preview renders.

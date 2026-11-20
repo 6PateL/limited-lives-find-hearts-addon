@@ -1,0 +1,10 @@
+{
+  "entity.lifehearts.heart": "Living Heart",
+  "item.lifehearts.heart_summoner": "Heart Summoner (debug)",
+  "item.lifehearts.heart_summoner.tip": "Right click: a heart appears in front of you",
+  "msg.lifehearts.gained": "Heart broken: you gained another life! Lives now: %s",
+  "msg.lifehearts.full": "Your lives are already full - the heart healed you",
+  "msg.lifehearts.nomod": "The heart strengthened you (Limited Lives not found)",
+  "overlay.lifehearts.plus": "+1 LIFE",
+  "overlay.lifehearts.lives": "Lives: %s"
+}

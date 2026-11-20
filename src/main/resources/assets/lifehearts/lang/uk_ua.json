@@ -1,0 +1,10 @@
+{
+  "entity.lifehearts.heart": "Живе серце",
+  "item.lifehearts.heart_summoner": "Виклик серця (дебаг)",
+  "item.lifehearts.heart_summoner.tip": "ПКМ — серце з'являється перед вами",
+  "msg.lifehearts.gained": "Серце розбито: ви отримали ще одне життя! Тепер життів: %s",
+  "msg.lifehearts.full": "Життя вже повні — серце вас зцілило",
+  "msg.lifehearts.nomod": "Серце зміцнило вас (Limited Lives не знайдено)",
+  "overlay.lifehearts.plus": "+1 ЖИТТЯ",
+  "overlay.lifehearts.lives": "Життів: %s"
+}
