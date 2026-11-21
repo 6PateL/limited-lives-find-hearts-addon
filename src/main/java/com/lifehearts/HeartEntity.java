@@ -157,30 +157,7 @@ public class HeartEntity extends Entity implements GeoEntity {
             Vec3 at = from.add(to.subtract(from).scale(i / 16.0D));
             level.sendParticles(new DustParticleOptions(new Vector3f(1.0F, 0.25F, 0.3F), 1.2F), at.x, at.y, at.z, 2, 0.05D, 0.05D, 0.05D, 0.0D);
         }
-        int lives = Lives.giveLife(p);
-        if (lives == -2) {
-            // життя вже повні: серце лікує
-            p.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, 1));
-            p.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 1200, 1));
-            p.displayClientMessage(Component.translatable("msg.lifehearts.full").withStyle(ChatFormatting.GOLD), true);
-            p.playNotifySound(SoundEvents.PLAYER_LEVELUP, SoundSource.PLAYERS, 1.0F, 1.2F);
-            LifeHearts.LOG.info("[LifeHearts] {} took a heart, lives already full: healed instead", p.getName().getString());
-            return;
-        }
-        if (lives == -1) {
-            p.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 2400, 3));
-            p.displayClientMessage(Component.translatable("msg.lifehearts.nomod").withStyle(ChatFormatting.GOLD), true);
-            LifeHearts.LOG.info("[LifeHearts] {} took a heart, Limited Lives not available: absorption instead", p.getName().getString());
-            return;
-        }
-        Net.sendLifeFx(p, lives);
-        // посвячення: урочисті звуки лише для нього
-        p.playNotifySound(SoundEvents.UI_TOAST_CHALLENGE_COMPLETE, SoundSource.PLAYERS, 1.0F, 1.0F);
-        p.playNotifySound(SoundEvents.BEACON_ACTIVATE, SoundSource.PLAYERS, 1.0F, 1.3F);
-        p.playNotifySound(SoundEvents.TOTEM_USE, SoundSource.PLAYERS, 0.4F, 1.4F);
-        level.sendParticles(ParticleTypes.TOTEM_OF_UNDYING, p.getX(), p.getY() + 1.0D, p.getZ(), 60, 0.5D, 1.0D, 0.5D, 0.3D);
-        p.sendSystemMessage(Component.translatable("msg.lifehearts.gained", lives).withStyle(ChatFormatting.RED, ChatFormatting.BOLD));
-        LifeHearts.LOG.info("[LifeHearts] {} gained a life from a heart at {}: now {} lives", p.getName().getString(), blockPosition().toShortString(), lives);
+        Lives.reward(p, "heart at " + blockPosition().toShortString());
     }
 
     // ------------------------------------------------------------------ інше

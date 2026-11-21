@@ -32,10 +32,24 @@ public class LifeHearts {
     public static final RegistryObject<Item> SUMMONER = ITEMS.register("heart_summoner",
             () -> new HeartSummonerItem(new Item.Properties().stacksTo(1)));
 
+    public static final RegistryObject<Item> LIFE_HEART = ITEMS.register("life_heart", LifeHeartItem::new);
+
+    public static final DeferredRegister<net.minecraft.world.item.CreativeModeTab> TABS =
+            DeferredRegister.create(net.minecraft.core.registries.Registries.CREATIVE_MODE_TAB, MOD_ID);
+    public static final RegistryObject<net.minecraft.world.item.CreativeModeTab> TAB = TABS.register("main",
+            () -> net.minecraft.world.item.CreativeModeTab.builder()
+                    .title(net.minecraft.network.chat.Component.translatable("itemGroup.lifehearts"))
+                    .icon(() -> new net.minecraft.world.item.ItemStack(LIFE_HEART.get()))
+                    .displayItems((params, out) -> {
+                        out.accept(LIFE_HEART.get());
+                        out.accept(SUMMONER.get());
+                    }).build());
+
     public LifeHearts() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         ENTITIES.register(bus);
         ITEMS.register(bus);
+        TABS.register(bus);
         bus.addListener(this::tabs);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, HeartConfig.SPEC);
         Net.register();

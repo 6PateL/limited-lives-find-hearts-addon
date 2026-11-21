@@ -43,6 +43,30 @@ public final class HeartClient {
         }
     }
 
+    /** Модель предмета «Серце життя» — та сама geo/текстура/анімація, що й у живого серця. */
+    public static class ItemModel extends GeoModel<LifeHeartItem> {
+        @Override
+        public ResourceLocation getModelResource(LifeHeartItem e) {
+            return Model.GEO;
+        }
+
+        @Override
+        public ResourceLocation getTextureResource(LifeHeartItem e) {
+            return Model.TEX;
+        }
+
+        @Override
+        public ResourceLocation getAnimationResource(LifeHeartItem e) {
+            return Model.ANIM;
+        }
+    }
+
+    public static net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer itemRenderer() {
+        software.bernie.geckolib.renderer.GeoItemRenderer<LifeHeartItem> r = new software.bernie.geckolib.renderer.GeoItemRenderer<>(new ItemModel());
+        r.addRenderLayer(new AutoGlowingGeoLayer<>(r));
+        return r;
+    }
+
     @SubscribeEvent
     public static void onRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(LifeHearts.HEART.get(), Renderer::new);

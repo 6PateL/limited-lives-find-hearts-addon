@@ -72,7 +72,7 @@ public final class LifeOverlay {
             }
         }
         Minecraft mc = Minecraft.getInstance();
-        Component text = Component.translatable("overlay.lifehearts.plus");
+        Component text = Component.translatable(lives == -2 ? "overlay.lifehearts.healed" : lives == -1 ? "overlay.lifehearts.power" : "overlay.lifehearts.plus");
         g.pose().pushPose();
         g.pose().translate(w / 2.0F, oy + 8 * px + 10, 0.0F);
         g.pose().scale(2.0F, 2.0F, 1.0F);

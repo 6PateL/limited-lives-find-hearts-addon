@@ -6,5 +6,10 @@
   "msg.lifehearts.full": "Життя вже повні — серце вас зцілило",
   "msg.lifehearts.nomod": "Серце зміцнило вас (Limited Lives не знайдено)",
   "overlay.lifehearts.plus": "+1 ЖИТТЯ",
-  "overlay.lifehearts.lives": "Життів: %s"
+  "overlay.lifehearts.lives": "Життів: %s",
+  "item.lifehearts.life_heart": "Серце життя",
+  "item.lifehearts.life_heart.tip": "ПКМ — поглинути: +1 життя",
+  "itemGroup.lifehearts": "Серця життя",
+  "overlay.lifehearts.healed": "СЕРЦЕ ЗЦІЛЮЄ",
+  "overlay.lifehearts.power": "СИЛА СЕРЦЯ"
 }

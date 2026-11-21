@@ -6,5 +6,10 @@
   "msg.lifehearts.full": "Your lives are already full - the heart healed you",
   "msg.lifehearts.nomod": "The heart strengthened you (Limited Lives not found)",
   "overlay.lifehearts.plus": "+1 LIFE",
-  "overlay.lifehearts.lives": "Lives: %s"
+  "overlay.lifehearts.lives": "Lives: %s",
+  "item.lifehearts.life_heart": "Life Heart",
+  "item.lifehearts.life_heart.tip": "Right-click to absorb: +1 life",
+  "itemGroup.lifehearts": "Life Hearts",
+  "overlay.lifehearts.healed": "THE HEART HEALS",
+  "overlay.lifehearts.power": "HEART'S POWER"
 }
