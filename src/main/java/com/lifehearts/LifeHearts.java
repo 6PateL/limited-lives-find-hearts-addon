@@ -42,7 +42,6 @@ public class LifeHearts {
                     .icon(() -> new net.minecraft.world.item.ItemStack(LIFE_HEART.get()))
                     .displayItems((params, out) -> {
                         out.accept(LIFE_HEART.get());
-                        out.accept(SUMMONER.get());
                     }).build());
 
     public LifeHearts() {
@@ -56,8 +55,6 @@ public class LifeHearts {
     }
 
     private void tabs(BuildCreativeModeTabContentsEvent e) {
-        if (e.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
-            e.accept(SUMMONER.get());
-        }
+        // виклик серця — у вкладці «Інструменти налагодження» (Flesh Spread)
     }
 }
